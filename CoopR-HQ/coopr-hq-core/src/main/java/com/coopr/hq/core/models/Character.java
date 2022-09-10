@@ -13,30 +13,24 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class Character {
 
     // Meta
-
     @Id
-    private String uid;
-    private int slot;
+    private String characterId;
     private String name;
     private CharacterRole role;
 
     // State
-
     private CharacterState state;
     private String position;
     private double timestampWIA;
 
     // Equipment
-
     private String loadout;
 
     // Scores
-
     private int reputation;
     private int legacy;
 
     // ACE3
-
     private AceRole aceRole;
 
 }
