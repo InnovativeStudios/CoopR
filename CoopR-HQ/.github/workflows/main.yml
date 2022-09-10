@@ -21,4 +21,6 @@ jobs:
           cache: maven
 
       - name: Step 3 - Have GitHub Actions Build Maven Project
-        run: mvn clean install
+        run: |
+        cd CoopR-HQ
+        mvn clean install
