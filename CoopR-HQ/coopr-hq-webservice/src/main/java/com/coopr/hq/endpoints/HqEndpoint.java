@@ -39,17 +39,17 @@ public class HqEndpoint {
     @PostMapping(value = API_VERSION + CHARACTER + METHOD_SAVE, consumes = MediaType.APPLICATION_JSON_VALUE)
     public void updateCharacter(@RequestBody Character character) {
         mongoTemplate.save(character);
-        log.info("Character with UID " + character.getCharacterID() + " has been saved");
+        log.info("Character with UID " + character.getCharacterID() + " has been Saved");
     }
 
     @PostMapping(value = API_VERSION + PLAYER + METHOD_SAVE, consumes = MediaType.APPLICATION_JSON_VALUE)
     public CreationResponse createPlayer(@RequestBody Player player) {
         if (mongoTemplate.findById(player.getUid(), Player.class) != null) {
-            log.info("Player already exists");
-            return new CreationResponse(false, "Player ID already exists");
+            log.info("Player Already Exists");
+            return new CreationResponse(false, "Player ID Already Exists");
         }
         mongoTemplate.save(player);
-        return new CreationResponse(true, "Player has been created");
+        return new CreationResponse(true, "Player has been Created");
     }
 
     // Queries
@@ -76,7 +76,7 @@ public class HqEndpoint {
     @GetMapping(API_VERSION + PLAYER + CHARACTER_LIST + METHOD_FETCH + "/{uid:^[0-9]*$}")
     public List<Character> fetchCharactersOfPlayer(@PathVariable("uid") String uid) {
         Player player = mongoTemplate.findById(uid, Player.class);
-        List<String> characterIDs = Objects.requireNonNull(player, "Player was null").getCharacters();
+        List<String> characterIDs = Objects.requireNonNull(player, "Player was Null").getCharacters();
         return characterIDs.stream()
                 .map(characterID -> mongoTemplate.findById(characterID, Character.class))
                 .collect(Collectors.toList());

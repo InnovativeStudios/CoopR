@@ -26,12 +26,12 @@ public class HQAuthenticationProvider implements AuthenticationProvider {
         String uid = authentication.getName();
         String password = authentication.getCredentials().toString();
 
-        log.info("Trying to authenticate for " + uid);
+        log.info("Trying to Authenticate " + uid);
         Query query = new Query().addCriteria(Criteria.where("_id").is(uid));
         Player player = mongoTemplate.findOne(query, Player.class);
 
         if (player == null) {
-            throw new AuthenticationCredentialsNotFoundException("Username could not be found");
+            throw new AuthenticationCredentialsNotFoundException("Username Could Not be Found");
         }
 
         log.info("found " + player);

@@ -36,7 +36,7 @@ public class HQConnection {
 
     public Optional<Character> getCharacter(String id) {
         if (this.version == null) {
-            log.error("No version has been set for this connection. Aborting API call.");
+            log.error("No Version has been set for this Connection. Aborting API Call.");
             return Optional.empty();
         }
 
@@ -44,7 +44,7 @@ public class HQConnection {
             String apiUrl = apiBaseUrl() + CHARACTER + FETCH + "/" + id;
             return Optional.ofNullable(restTemplate.getForObject(apiUrl, Character.class));
         } catch (RestClientException e) {
-            log.error("Could not retrieve character by id {}", id);
+            log.error("Could Not Retrieve Character by ID {}", id);
             log.error(e.getMessage());
             return Optional.empty();
         }
