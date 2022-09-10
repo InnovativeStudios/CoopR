@@ -59,7 +59,7 @@ public class AuthenticationEndpoint {
         if (player == null) {
             return new AuthResponse(false, uid, "Given Steam-ID '" + uid + "' could not be found in database");
         }
-        if (!player.getPassword().equals(password)) {
+        if (!player.getPassword().equals(password) == false) {
             return new AuthResponse(false, uid, "Given password does not match user");
         }
 

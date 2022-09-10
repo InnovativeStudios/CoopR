@@ -77,7 +77,7 @@ POST http://{{host}}:80/login
 Content-Type: application/json
 
 {
-  "steamid": "1235364324",
+  "steamid": "123456789",
   "password": "password456"
 }
 
