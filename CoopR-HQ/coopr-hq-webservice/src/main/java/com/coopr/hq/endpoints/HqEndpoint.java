@@ -39,7 +39,7 @@ public class HqEndpoint {
     @PostMapping(value = API_VERSION + CHARACTER + METHOD_SAVE, consumes = MediaType.APPLICATION_JSON_VALUE)
     public void updateCharacter(@RequestBody Character character) {
         mongoTemplate.save(character);
-        log.info("Character with UID " + character.getCharacterId() + " has been saved");
+        log.info("Character with UID " + character.getCharacterID() + " has been saved");
     }
 
     @PostMapping(value = API_VERSION + PLAYER + METHOD_SAVE, consumes = MediaType.APPLICATION_JSON_VALUE)
@@ -58,9 +58,9 @@ public class HqEndpoint {
         return mongoTemplate.findAll(Character.class);
     }
 
-    @GetMapping(API_VERSION + CHARACTER + METHOD_FETCH + "/{characterId:^[0-9]*$}")
-    public Character fetchCharacter(@PathVariable("characterId") String characterId) {
-        return mongoTemplate.findById(characterId, Character.class);
+    @GetMapping(API_VERSION + CHARACTER + METHOD_FETCH + "/{characterID:^[0-9]*$}")
+    public Character fetchCharacter(@PathVariable("characterID") String characterID) {
+        return mongoTemplate.findById(characterID, Character.class);
     }
 
     @GetMapping(API_VERSION + PLAYER + METHOD_FETCH + "/{uid:^[0-9]*$}")
@@ -78,7 +78,7 @@ public class HqEndpoint {
         Player player = mongoTemplate.findById(uid, Player.class);
         List<String> characterIDs = Objects.requireNonNull(player, "Player was null").getCharacters();
         return characterIDs.stream()
-                .map(characterId -> mongoTemplate.findById(characterId, Character.class))
+                .map(characterID -> mongoTemplate.findById(characterID, Character.class))
                 .collect(Collectors.toList());
     }
 }

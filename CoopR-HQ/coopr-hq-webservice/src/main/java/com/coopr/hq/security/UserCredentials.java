@@ -6,6 +6,6 @@ import lombok.Data;
 @Data
 @AllArgsConstructor
 public class UserCredentials {
-    private String steamid;
+    private String steamID;
     private String password;
 }

@@ -34,7 +34,7 @@ public class AuthenticationEndpoint {
     public AuthResponse loginUser(@RequestBody UserCredentials userCredentials,
                                   @CookieValue(value = REMEMBER_ME_COOKIE, required = false) String cookieValue,
                                   HttpServletResponse response) {
-        String uid = userCredentials.getSteamid();
+        String uid = userCredentials.getSteamID();
         String password = userCredentials.getPassword();
 
         if (cookieValue != null) {

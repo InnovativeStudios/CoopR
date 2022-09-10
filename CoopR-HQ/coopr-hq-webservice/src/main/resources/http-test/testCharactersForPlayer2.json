@@ -1,6 +1,6 @@
 [
   {
-    "characterId" : "7549",
+    "characterID" : "7549",
     "name": "Marko Manterosdfs",
     "role": "MEDIC",
     "state": "WOUNDED_IN_ACTION",
@@ -12,7 +12,7 @@
     "aceRole": "ACE_MEDIC"
   },
   {
-    "characterId" : "9823",
+    "characterID" : "9823",
     "name": "LOLOLLO",
     "role": "LEADER",
     "state": "HOSTAGE",

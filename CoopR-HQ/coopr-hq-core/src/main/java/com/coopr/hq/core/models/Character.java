@@ -14,7 +14,7 @@ public class Character {
 
     // Meta
     @Id
-    private String characterId;
+    private String characterID;
     private String name;
     private CharacterRole role;
 

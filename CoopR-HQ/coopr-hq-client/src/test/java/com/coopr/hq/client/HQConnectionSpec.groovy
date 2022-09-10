@@ -47,7 +47,7 @@ class HQConnectionSpec extends Specification {
 
         expect:
         Character actual = uut.getCharacter(testId).get()
-        actual.getCharacterId() == testId
+        actual.getcharacterID() == testId
         actual.getName().contains(version.toString())
 
         where:

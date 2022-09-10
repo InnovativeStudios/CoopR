@@ -1,6 +1,6 @@
 [
   {
-    "characterId" : "4235",
+    "characterID" : "4235",
     "name": "Creek McCrussels",
     "role": "MEDIC",
     "state": "WOUNDED_IN_ACTION",
@@ -12,7 +12,7 @@
     "aceRole": "ACE_MEDIC"
   },
   {
-    "characterId" : "1234",
+    "characterID" : "1234",
     "name": "Johnny Boomer",
     "role": "LEADER",
     "state": "HOSTAGE",
@@ -24,7 +24,7 @@
     "aceRole": "ACE_MEDIC"
   },
   {
-    "characterId" : "5432",
+    "characterID" : "5432",
     "name": "Marcy McFarsy",
     "role": "DMR",
     "state": "OK",
