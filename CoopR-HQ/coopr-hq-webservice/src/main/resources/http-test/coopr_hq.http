@@ -73,7 +73,7 @@ GET http://{{host}}:{{port}}/api/v0.1/player/characters/fetch/0000000001
 GET http://{{host}}:{{port}}/api/v0.1/player/characters/fetch/1235364324
 
 ### test
-POST http://{{host}}:80/login
+POST http://{{host}}:{{port}}/login
 Content-Type: application/json
 
 {

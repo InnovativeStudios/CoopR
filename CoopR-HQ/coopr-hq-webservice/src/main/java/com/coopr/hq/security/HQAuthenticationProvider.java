@@ -34,7 +34,7 @@ public class HQAuthenticationProvider implements AuthenticationProvider {
             throw new AuthenticationCredentialsNotFoundException("Username Could Not be Found");
         }
 
-        log.info("found " + player);
+        log.info("Found " + player);
 
         return new UsernamePasswordAuthenticationToken(uid, password, new ArrayList<>());
     }

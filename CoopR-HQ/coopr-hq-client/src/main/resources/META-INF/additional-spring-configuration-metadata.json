@@ -3,7 +3,7 @@
     {
       "name": "hq.host",
       "type": "java.lang.String",
-      "defaultValue": "localhost",
+      "defaultValue": "coopr-hq.com",
       "description": "Hostname of the CoopR HQ WebService."
     }
   ]
