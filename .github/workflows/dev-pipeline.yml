@@ -2,8 +2,7 @@ name: Deploy to Development
 
 on:
   push:
-    branches: 
-      - development
+    branches: [ "main" ]
 
 jobs:
   build:
@@ -11,8 +10,11 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v1
-    - name: Build Testing Release
+    - name: Step 1 - Checkout Main Branch from GitHub
+      uses: actions/checkout@v3
+    
+    - name: Step 2 - Build Testing Release
       run: |
+        cd CoopR-Mod
         chmod +x ./build_release.sh
         ./build_release.sh
