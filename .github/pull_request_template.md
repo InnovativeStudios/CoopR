@@ -1,9 +1,9 @@
 ### Features:
-* will do stuff
-* will do more stuff
+* Will do Stuff
+* Will do More Stuff
 
 ### Fixes:
-* fixes bug of v0.X.X
+* Fixes Bug of v0.X.X
 
 ### Refactorings:
-* extracted new functions out of stuff script
+* Extracted New Functions out of Stuff Script
