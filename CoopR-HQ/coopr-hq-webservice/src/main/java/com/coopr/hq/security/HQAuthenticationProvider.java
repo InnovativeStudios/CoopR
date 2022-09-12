@@ -17,7 +17,7 @@ import java.util.ArrayList;
 
 @Component
 @Log
-public class HqAuthenticationProvider implements AuthenticationProvider {
+public class HQAuthenticationProvider implements AuthenticationProvider {
     @Autowired
     private MongoTemplate mongoTemplate;
 
