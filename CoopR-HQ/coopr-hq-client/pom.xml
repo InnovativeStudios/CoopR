@@ -80,6 +80,7 @@
                 <version>1.5</version>
                 <executions>
                     <execution>
+                        <?m2e execute onConfiguration,onIncremental?>
                         <goals>
                             <goal>addTestSources</goal>
                             <goal>testCompile</goal>

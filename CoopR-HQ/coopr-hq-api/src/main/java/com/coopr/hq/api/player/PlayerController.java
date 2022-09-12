@@ -1,6 +1,5 @@
 package com.coopr.hq.api.player;
 
-import com.coopr.hq.api.character.CharacterRepository;
 import com.coopr.hq.core.models.Character;
 import com.coopr.hq.core.models.Player;
 import lombok.extern.java.Log;
