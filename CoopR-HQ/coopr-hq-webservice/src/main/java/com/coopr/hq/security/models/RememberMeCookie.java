@@ -12,7 +12,11 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @Document(collection = "coopr_hq_cookies")
 public class RememberMeCookie {
     @Id
+    private String id;
     private String steamID;
     private String cookieType;
     private String cookieHash;
+
+    public RememberMeCookie(String uid, String remember_me_cookie, String hash) {
+    }
 }

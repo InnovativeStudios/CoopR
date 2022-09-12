@@ -13,7 +13,6 @@ import java.util.List;
 @AllArgsConstructor
 @Document(collection = "coopr_hq_players")
 public class Player {
-    // Meta
     @Id
     private String uid;
     private String password;

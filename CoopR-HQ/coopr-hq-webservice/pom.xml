@@ -91,7 +91,7 @@
     </dependencies>
 
     <build>
-        <finalName>coopr-hq-${project.version}</finalName>
+        <finalName>coopr-hq-webservice-${project.version}</finalName>
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>

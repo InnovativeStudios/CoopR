@@ -17,7 +17,7 @@ import java.util.ArrayList;
 
 @Component
 @Log
-public class HQAuthenticationProvider implements AuthenticationProvider {
+public class HqAuthenticationProvider implements AuthenticationProvider {
     @Autowired
     private MongoTemplate mongoTemplate;
 
@@ -27,6 +27,7 @@ public class HQAuthenticationProvider implements AuthenticationProvider {
         String password = authentication.getCredentials().toString();
 
         log.info("Trying to Authenticate " + uid);
+
         Query query = new Query().addCriteria(Criteria.where("_id").is(uid));
         Player player = mongoTemplate.findOne(query, Player.class);
 

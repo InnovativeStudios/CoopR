@@ -26,9 +26,14 @@
     </properties>
 
     <modules>
+        <module>coopr-hq-api</module>
         <module>coopr-hq-core</module>
         <module>coopr-hq-client</module>
         <module>coopr-hq-webservice</module>
     </modules>
+
+    <build>
+        <finalName>coopr-hq-${project.version}</finalName>
+    </build>
 
 </project>

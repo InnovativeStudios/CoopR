@@ -4,6 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 @Data
@@ -11,26 +12,15 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @AllArgsConstructor
 @Document(collection = "coopr_hq_characters")
 public class Character {
-
-    // Meta
     @Id
     private String characterID;
     private String name;
     private CharacterRole role;
-
-    // State
     private CharacterState state;
     private String position;
     private double timestampWIA;
-
-    // Equipment
     private String loadout;
-
-    // Scores
     private int reputation;
     private int legacy;
-
-    // ACE3
     private AceRole aceRole;
-
 }
