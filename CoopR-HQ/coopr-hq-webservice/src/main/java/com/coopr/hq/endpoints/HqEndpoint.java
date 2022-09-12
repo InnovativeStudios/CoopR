@@ -6,7 +6,6 @@ import com.coopr.hq.repositories.CharacterRepository;
 import com.coopr.hq.repositories.PlayerRepository;
 import lombok.extern.java.Log;
 import org.springframework.beans.factory.annotation.Autowired;
-//import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
@@ -25,12 +24,6 @@ public class HqEndpoint {
     private final String METHOD_SAVE = "save";
     private final String METHOD_FETCH = "fetch";
 
-//    private MongoTemplate mongoTemplate;
-//
-//    @Autowired
-//    public HqEndpoint(MongoTemplate mongoTemplate) {
-//        this.mongoTemplate = mongoTemplate;
-//    }
     @Autowired
     private CharacterRepository characterRepository;
     @Autowired
