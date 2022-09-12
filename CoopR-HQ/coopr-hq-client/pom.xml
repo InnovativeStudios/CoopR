@@ -4,6 +4,13 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.7.3</version>
+        <relativePath/>
+    </parent>
+
     <groupId>com.coopr</groupId>
     <artifactId>coopr-hq-client</artifactId>
     <version>0.0.1-SNAPSHOT</version>
@@ -11,13 +18,6 @@
     
     <name>CoopR HQ Client</name>
     <description>CoopR Mod HQ Client</description>
-
-    <parent>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.7.3</version>
-        <relativePath/>
-    </parent>
 
     <properties>
         <maven.compiler.source>18</maven.compiler.source>
