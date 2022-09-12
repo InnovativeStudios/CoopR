@@ -3,7 +3,6 @@ package com.coopr.hq.api.character;
 import com.coopr.hq.core.models.Character;
 import lombok.extern.java.Log;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -22,31 +21,27 @@ public class CharacterController {
     private final String METHOD_SAVE = "save";
     private final String METHOD_FETCH = "fetch";
 
-    private MongoTemplate mongoTemplate;
-
     @Autowired
-    public CharacterController(MongoTemplate mongoTemplate) {
-        this.mongoTemplate = mongoTemplate;
-    }
+    private CharacterRepository characterRepository;
 
     // Posts
     @PostMapping(value = API_VERSION + CHARACTER_LIST + METHOD_SAVE, consumes = MediaType.APPLICATION_JSON_VALUE)
     public void updateCharacters(@RequestBody List<Character> characters) {
-        characters.forEach(this::updateCharacter);
+        characterRepository.saveAll(characters);
     }
     @PostMapping(value = API_VERSION + CHARACTER + METHOD_SAVE, consumes = MediaType.APPLICATION_JSON_VALUE)
     public void updateCharacter(@RequestBody Character character) {
-        mongoTemplate.save(character);
-        log.info("Character with UID " + character.getCharacterID() + " has been Saved");
+        characterRepository.save(character);
+        log.info("Character with UID " + character.getCharacterID() + " has been saved");
     }
 
     // Queries
     @GetMapping(API_VERSION + CHARACTER_LIST + METHOD_FETCH)
     public List<Character> fetchAllCharacters() {
-        return mongoTemplate.findAll(Character.class);
+        return characterRepository.findAll();
     }
     @GetMapping(API_VERSION + CHARACTER + METHOD_FETCH + "/{characterID:^[0-9]*$}")
     public Character fetchCharacter(@PathVariable("characterID") String characterID) {
-        return mongoTemplate.findById(characterID, Character.class);
+        return characterRepository.findById(characterID).orElseGet(Character::new);
     }
 }
