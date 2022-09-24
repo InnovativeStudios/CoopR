@@ -13,6 +13,7 @@ if (isServer) then {
 
     INFO2("CoopR Server ID: %1", COOPR_SERVER_ID);
     INFO2("persistence location is set to %1", COOPR_PERSISTENCE_LOCATION);
+    INFO2("persistence custom location is set to %1", COOPR_CUSTOM_LOCATION);
 } else {
     SERVER_ONLY_ERROR(__FILE__);
 };

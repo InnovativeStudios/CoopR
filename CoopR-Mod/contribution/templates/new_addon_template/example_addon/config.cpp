@@ -8,7 +8,7 @@ class CfgPatches {
         author = "xetra11";
         url = "https://github.com/CoopR-Mod/CoopR-Mod";
 
-        requiredVersion = 1.80;
+        // requiredVersion = 1.80;
         requiredAddons[] = {
             "coopr_core" // all addons need to depend on core
         };
